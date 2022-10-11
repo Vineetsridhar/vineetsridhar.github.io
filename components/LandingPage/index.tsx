@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ReactTyped from "react-typed";
 import { LandingContainer } from "./styled";
 
 const LandingPage = () => {
@@ -7,7 +8,21 @@ const LandingPage = () => {
         <LandingContainer>
             <div className="title-container">
                 <h1>Vineet Sridhar</h1>
-                <p>Software Engineer</p>
+                <ReactTyped
+                    strings={[
+                        "Software engineer",
+                        "Lifelong learner",
+                        "Hiker",
+                        "Leader",
+                        "Nature lover"
+                    ]}
+                    typeSpeed={50}
+                    backSpeed={50}
+                    backDelay={3000}
+                    loop
+                    className="description"
+                />
+
             </div>
             <img
                 alt="Picture of me"

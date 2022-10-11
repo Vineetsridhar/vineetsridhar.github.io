@@ -23,7 +23,7 @@ export const LandingContainer = styled.section`
         margin: 0px;
     }
 
-    p {
+    .description {
         margin: 0px;
         font-size: min(3vw, 3em);
         font-weight: 200;
