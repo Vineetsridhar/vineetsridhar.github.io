@@ -8,6 +8,7 @@ const Home: NextPage = () => {
         <div className="container">
             <Head>
                 <title>Resume</title>
+                <meta name="description" content="Online portfolio"/>
             </Head>
             <LandingPage />
         </div>
