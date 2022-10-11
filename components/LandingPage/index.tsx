@@ -6,7 +6,7 @@ const DESCRIPTIONS = [
   "Lifelong learner 🧑🎓",
   "Hiker ⛰️",
   "Leader 👑",
-  "Nature lover 🌻",
+  "Techie 🎧🖥️",
 ];
 
 const generateTypingSequence = (backspaceDelay: number) => {
