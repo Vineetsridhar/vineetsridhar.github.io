@@ -6,7 +6,7 @@ body {
   margin: 0;
   color: white;
   font-family: "Open Sans", sans-serif;
-  overflow-x: unset;
+  overflow-x: clip;
 }
 
 section {
