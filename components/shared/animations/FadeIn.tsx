@@ -1,14 +1,9 @@
 import React, { ReactNode } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FadeInContainer } from './styled';
+import { AnimationProps } from './types';
 
-interface FlyInProps {
-  children: ReactNode;
-  threshold?: number | number[];
-  fallbackInView?: boolean;
-}
-
-export const FadeIn = ({ children, threshold = 1, fallbackInView = true }: FlyInProps) => {
+export const FadeIn = ({ children, threshold = 1, fallbackInView = true }: AnimationProps) => {
   const { ref, inView } = useInView({
     threshold,
     fallbackInView

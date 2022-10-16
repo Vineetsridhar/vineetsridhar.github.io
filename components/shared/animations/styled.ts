@@ -29,7 +29,6 @@ const getTransformFromDirection = (direction: Direction) => {
       return css`translateX(100%)`;
   }
 };
-
 export const FlyInContainer = styled.div<FlyInProps>`
   .hidden {
     opacity: 0;
@@ -42,4 +41,20 @@ export const FlyInContainer = styled.div<FlyInProps>`
     transform: translate(0);
     transition: all ${ANIMATION_SPEED}s;
   }
+`;
+
+interface StaggerContainerProps {
+  numElements: number;
+  delayInMs?: number;
+}
+export const StaggerContainer = styled.div<StaggerContainerProps>`
+  ${({ numElements, delayInMs = 200 }) => {
+    return Array.from({ length: numElements }).map(
+      (_, i) => `
+        .stagger-item:nth-child(${i + 2}) {
+          transition-delay: ${(i + 2) * delayInMs}ms
+        }
+      `
+    );
+  }}
 `;

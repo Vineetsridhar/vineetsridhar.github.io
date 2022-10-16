@@ -1,13 +1,11 @@
 import React, { ReactNode } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FlyInContainer } from './styled';
+import { AnimationProps } from './types';
 
 export type Direction = 'top' | 'left' | 'right' | 'bottom'
 
-interface FlyInProps {
-  children: ReactNode;
-  threshold?: number | number[];
-  fallbackInView?: boolean;
+interface FlyInProps extends AnimationProps {
   direction: Direction;
 }
 

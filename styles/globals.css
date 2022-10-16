@@ -19,6 +19,10 @@ h1 {
   margin: 0px;
 }
 
+h2 {
+  font-size: min(3vw, 3em);
+}
+
 /* https://stackoverflow.com/a/49278385 */
 body {
   overflow-y: scroll;
