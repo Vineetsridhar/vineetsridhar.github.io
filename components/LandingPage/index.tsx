@@ -47,7 +47,7 @@ const LandingPage = () => {
           </div>
           <BioContainer>
             <h1>About me</h1>
-            {BIO.map((paragraph) => <FadeIn threshold={0.9}><p>{paragraph}</p></FadeIn>)}
+            {BIO.map((paragraph) => <FadeIn><p>{paragraph}</p></FadeIn>)}
           </BioContainer>
         </div>
         <Scene
