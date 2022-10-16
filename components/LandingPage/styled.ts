@@ -84,34 +84,9 @@ export const LandingContainer = styled.section`
     }
   }
 `;
-interface BioContainerProps {
-  numParagraphs: number;
-}
 
-export const BioContainer = styled.div<BioContainerProps>`
+export const BioContainer = styled.div`
   margin: 20px 10vw;
-
-  .hidden {
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: all 0s;
-  }
-
-  .show {
-    opacity: 1;
-    transform: translateX(0);
-    transition: all 1s;
-  }
-
-  ${({ numParagraphs }) => {
-    return Array.from({ length: numParagraphs }).map(
-      (_, i) => `
-        p:nth-child(${i + 2}) {
-          transition-delay: ${(i + 2) * 200}ms
-        }
-      `
-    );
-  }}
 
   @media only screen and (max-aspect-ratio: 10/9) {
     width: 70vw;

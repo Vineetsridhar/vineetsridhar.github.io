@@ -3,6 +3,7 @@ import { BioContainer, LandingContainer } from "./styled";
 import { Controller, Scene } from 'react-scrollmagic';
 import { useInView } from "react-intersection-observer";
 import { useWindowSize } from "../../hooks/useWindowSize";
+import { FadeIn } from "../shared/animations/FadeIn";
 
 const DESCRIPTIONS = [
   "Software engineer 🧑💻",
@@ -26,10 +27,6 @@ const generateTypingSequence = (backspaceDelay: number) => {
 };
 
 const LandingPage = () => {
-  const { ref, inView } = useInView({
-    threshold: [0.2],
-    fallbackInView: true
-  });
   const { width, height } = useWindowSize();
 
   const isMobile = width && height && (width / height) <= (10 / 9)
@@ -48,9 +45,9 @@ const LandingPage = () => {
               className="description"
             />
           </div>
-          <BioContainer numParagraphs={BIO.length} ref={ref}>
+          <BioContainer>
             <h1>About me</h1>
-            {BIO.map((paragraph) => <p className={inView ? "show" : "hidden"}>{paragraph}</p>)}
+            {BIO.map((paragraph) => <FadeIn threshold={0.9}><p>{paragraph}</p></FadeIn>)}
           </BioContainer>
         </div>
         <Scene
