@@ -45,7 +45,7 @@ const ADDITIONAL_LANGUAGES = [
 
 const SKILLS = [
   {
-    logo: "/languages/mongodb.png",
+    logo: "/languages/mongo.png",
     title: "MongoDB"
   },
   {
