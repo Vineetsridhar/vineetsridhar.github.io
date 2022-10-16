@@ -1,7 +1,7 @@
-import styled, { css, CSSProp } from "styled-components";
+import styled, { css } from "styled-components";
 import { Direction } from "./FlyIn";
 
-const ANIMATION_SPEED = 2;
+const ANIMATION_SPEED = 1.5;
 
 export const FadeInContainer = styled.div`
   .hidden {
