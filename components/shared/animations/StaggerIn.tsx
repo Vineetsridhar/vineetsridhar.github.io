@@ -8,8 +8,9 @@ interface StaggerInProps extends AnimationProps {
   animationFunctionProps?: any;
   children: ReactNode[];
   containerClassName?: string;
+  animationDelay?: number;
 }
-export const StaggerIn = ({ animation, animationFunctionProps, threshold = 1, fallbackInView = true, children, containerClassName }: StaggerInProps) => {
+export const StaggerIn = ({ animation, animationFunctionProps, animationDelay = 200, threshold = 1, fallbackInView = true, children, containerClassName }: StaggerInProps) => {
   const { ref, inView } = useInView({
     threshold,
     fallbackInView
@@ -27,8 +28,8 @@ export const StaggerIn = ({ animation, animationFunctionProps, threshold = 1, fa
   const AnimationContainer = getAnimationContainer();
 
   return (
-    <AnimationContainer {...animationFunctionProps} ref={ref}>
-      <StaggerContainer numElements={children.length} className={containerClassName}>
+    <AnimationContainer {...animationFunctionProps}>
+      <StaggerContainer delayInMs={animationDelay} numElements={children.length} ref={ref} className={containerClassName}>
         {children.map((node) => (
           <span className={`stagger-item ${inView ? "show" : "hidden"}`}>{node}</span>
         ))}
