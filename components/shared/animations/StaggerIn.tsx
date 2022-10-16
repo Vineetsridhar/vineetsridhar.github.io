@@ -28,7 +28,7 @@ export const StaggerIn = ({ animation, animationFunctionProps, animationDelay = 
   const AnimationContainer = getAnimationContainer();
 
   return (
-    <AnimationContainer {...animationFunctionProps}>
+    <AnimationContainer {...animationFunctionProps} threshold={threshold}>
       <StaggerContainer delayInMs={animationDelay} numElements={children.length} ref={ref} className={containerClassName}>
         {children.map((node) => (
           <span className={`stagger-item ${inView ? "show" : "hidden"}`}>{node}</span>

@@ -34,3 +34,13 @@ body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
+
+@media only screen and (max-aspect-ratio: 10/9) {
+  h1 {
+    font-size: 12vw;
+  }
+
+  h2 {
+    font-size: 8vw;
+  }
+}

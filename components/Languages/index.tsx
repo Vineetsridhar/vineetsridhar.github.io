@@ -1,5 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import { FadeIn } from '../shared/animations/FadeIn';
 import { FlyIn } from '../shared/animations/FlyIn';
 import { StaggerIn } from '../shared/animations/StaggerIn';
 import { StageItem } from '../shared/StageItem';
@@ -91,9 +92,9 @@ export const Languages = () => {
         <h1>Languages</h1>
       </FlyIn>
 
-      <FlyIn direction="right">
+      <FadeIn>
         <h2>My Favorites</h2>
-      </FlyIn>
+      </FadeIn>
 
       <StaggerIn
         animation="fly-in"
@@ -109,14 +110,15 @@ export const Languages = () => {
       </StaggerIn>
 
 
-      <FlyIn direction="right">
+      <FadeIn>
         <h2>I've also worked with</h2>
-      </FlyIn>
+      </FadeIn>
 
       <StaggerIn
         animation="fly-in"
         animationFunctionProps={{ direction: 'left' }}
         containerClassName='favorites-container'
+        threshold={0.35}
       >
         {ADDITIONAL_LANGUAGES.map((languageObj) => (
           <StageItem
@@ -135,6 +137,7 @@ export const Languages = () => {
         animationFunctionProps={{ direction: 'left' }}
         containerClassName='favorites-container'
         animationDelay={100}
+        threshold={0.35}
       >
         {SKILLS.map((languageObj) => (
           <StageItem
