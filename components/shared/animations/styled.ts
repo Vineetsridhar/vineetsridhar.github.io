@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { Direction } from "./FlyIn";
 
-const ANIMATION_SPEED = 1.5;
+const ANIMATION_SPEED = 1;
 
 export const FadeInContainer = styled.div`
   .hidden {
@@ -20,20 +20,24 @@ interface FlyInProps {
 const getTransformFromDirection = (direction: Direction) => {
   switch (direction) {
     case "top":
-      return css`translateY(-100%)`;
+      return css`translateY(-75%)`;
     case "bottom":
-      return css`translateY(100%)`;
+      return css`translateY(75%)`;
     case "left":
-      return css`translateX(-100%)`;
+      return css`translateX(-75%)`;
     case "right":
-      return css`translateX(100%)`;
+      return css`translateX(75%)`;
   }
 };
+
 export const FlyInContainer = styled.div<FlyInProps>`
   .hidden {
     opacity: 0;
     transform: ${({ direction }) => getTransformFromDirection(direction)};
     transition: all 0.5s;
+    @media only screen and (max-aspect-ratio: 10/9) {
+      transform: none;
+    }
   }
 
   .show {
