@@ -6,12 +6,13 @@ interface StageItemProps {
   logo: string;
   title: string;
   className?: string;
+  variant?: 'small' | 'large';
 }
 
-export const StageItem = ({ logo, title, className }: StageItemProps) => {
+export const StageItem = ({ logo, title, className, variant = "large" }: StageItemProps) => {
   return (
-    <StageItemContainer>
-      <StageItemImage src={logo} />
+    <StageItemContainer className={className}>
+      <StageItemImage src={logo} variant={variant} />
       <StageItemTitle>{title}</StageItemTitle>
     </StageItemContainer>
   )

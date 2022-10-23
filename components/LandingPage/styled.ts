@@ -88,6 +88,10 @@ export const LandingContainer = styled.section`
 export const BioContainer = styled.div`
   margin: 20px 10vw;
 
+  p {
+    font-size: min(1.8em, 2vmin);
+  }
+
   @media only screen and (max-aspect-ratio: 10/9) {
     width: 70vw;
     margin: auto;

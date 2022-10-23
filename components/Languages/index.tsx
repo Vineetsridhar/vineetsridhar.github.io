@@ -116,7 +116,7 @@ export const Languages = () => {
 
       <StaggerIn
         animation="fly-in"
-        animationFunctionProps={{ direction: 'left' }}
+        animationFunctionProps={{ direction: 'right' }}
         containerClassName='favorites-container'
         threshold={0.35}
       >
@@ -124,6 +124,7 @@ export const Languages = () => {
           <StageItem
             title={languageObj.title}
             logo={languageObj.logo}
+            variant="small"
           />
         ))}
       </StaggerIn>
@@ -134,7 +135,7 @@ export const Languages = () => {
 
       <StaggerIn
         animation="fly-in"
-        animationFunctionProps={{ direction: 'left' }}
+        animationFunctionProps={{ direction: 'bottom' }}
         containerClassName='favorites-container'
         animationDelay={100}
         threshold={0.35}
@@ -143,6 +144,7 @@ export const Languages = () => {
           <StageItem
             title={languageObj.title}
             logo={languageObj.logo}
+            variant="small"
           />
         ))}
       </StaggerIn>
